@@ -1,4 +1,4 @@
-# The-Tech-Academy-SQL-Coding-Projects
+# The-Tech-Academy-SQL_Library_Management
 
 1. Review this diagram of the database schema:
 
