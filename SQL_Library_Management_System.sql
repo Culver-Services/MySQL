@@ -156,7 +156,7 @@ INSERT INTO tbl_book_authors
 	(108, 'Cheryl Thompson'),
 	(109, 'Denise Bolduc'),
 	(110, 'Cheryl Thompson'),
-    (111, 'J.K. Rowling'),
+    	(111, 'J.K. Rowling'),
 	(112, 'Cheryl Thompson'),
 	(113, 'Douglas Adams'),
 	(114, 'Steven King'),
@@ -196,7 +196,7 @@ INSERT INTO tbl_book_copies
 	(119, 1, 2),
 	(120, 1, 11),
 
-    (101, 2, 7),
+        (101, 2, 7),
 	(102, 2, 7),
 	(103, 2, 7),
 	(104, 2, 7),
