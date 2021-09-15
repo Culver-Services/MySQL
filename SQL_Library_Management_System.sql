@@ -397,9 +397,9 @@ EXEC sp_Number2
 
 CREATE PROCEDURE sp_Number3
 AS
-SELECT a.card_number, a.borrower_name, a.borrower_address, a.borrower_phone
+SELECT a.card_no, a.borrower_name, a.borrower_address, a.borrower_phone
 	FROM tbl_borrower a
-	LEFT OUTER JOIN tbl_book_loans b ON a.card_number = b.card_number
+	LEFT OUTER JOIN tbl_book_loans b ON a.card_no = b.card_no
 	WHERE b.book_id IS NULL
 
 -- Stored Procedure
