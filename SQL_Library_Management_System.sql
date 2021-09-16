@@ -93,7 +93,7 @@ INSERT INTO tbl_borrower
 	(600005, 'Bill Gates', '72 Coronation St, Woodbridge, ON', '(416) 476-2456'),
 	(600007, 'Xi Jinping', '55 Industrial Pkwy N, Aurora, ON', '(416) 227-2555'),
 	(600008, 'Jeff Bezos', '54 Cabaletta Crescent, Woodbridge, ON', '(470) 897-6565'),
-	(600009, 'Cathie Wood', '32 Whalen Ct, Richmond Hill, ON', '(905) 534-0001'),
+	(600009, 'Cathie Wood', '32 Whalen Ct, Richmond Hill, ON', '(905) 534-0001')
 ;
 
 SELECT * FROM tbl_borrower;
@@ -111,7 +111,7 @@ INSERT INTO tbl_publisher
 	('Boulder Publications', '1625 Park Ct, Robb, Alberta', '(905)969-5446'),
 	('Arsenal Pulp Press', '2568 St George Street, Vancouver, British Columbia', '(250)488-7955'),
 	('Goose Lane Editions', '3498 York St, London, Ontario', '(705)251-3666'),
-	('Signature Editions', '3649 Cordova Street, Vancouver, British Columbia', '(819)840-8001'),
+	('Signature Editions', '3649 Cordova Street, Vancouver, British Columbia', '(819)840-8001')
 ;
 
 SELECT * FROM tbl_publisher;
@@ -137,7 +137,7 @@ INSERT INTO tbl_books
 	('THE BROADVIEW ANTHOLOGY OF SHORT FICTION - FOURTH CANADIAN EDITION', 'Broadview Press'),
 	('YELLOWSTONE NATIONAL PARK HARDCOVER RULED JOURNAL', 'Signature Editions'),
 	('KRISHNA HARDCOVER RULED JOURNAL: B.G.', 'Signature Editions'),
-	('SECRETS AND LIES: AT BAY PRESS FICTION ANNUAL', 'At Bay Press'),
+	('SECRETS AND LIES: AT BAY PRESS FICTION ANNUAL', 'At Bay Press')
 ;
 
 SELECT * FROM tbl_books;
@@ -165,7 +165,7 @@ INSERT INTO tbl_book_authors
 	(117, 'Lewis Carroll'),
 	(118, 'Oscar Wilde'),
 	(119, 'Victor Hugo'),
-	(120, 'Steven King'),
+	(120, 'Steven King')
 ;
 
 ;
@@ -299,7 +299,7 @@ INSERT INTO tbl_book_copies
 	(117, 6, 5),
 	(118, 6, 3),
 	(119, 6, 9),
-	(120, 6, 11),
+	(120, 6, 11)
 ;
 
 SELECT * FROM tbl_book_copies;
@@ -340,28 +340,16 @@ INSERT INTO tbl_book_loans
 	(105, 2, 600008, '2021-04-01', '2021-04-06'),
 
 	(115, 3, 600008, '2021-07-15', '2021-07-22'),
-	(120, 3, 600008, '2021-07-22', '2021-07-29'), 
+	(120, 3, 600008, '2021-07-22', '2021-07-29')
 ;
 
 SELECT * FROM tbl_book_loans;
 
-SELECT * FROM ((Book_Loans FULL OUTER JOIN Borrower ON Book_Loans.CardNo = Borrower.CardNo) 
-FULL OUTER JOIN Books ON Book_Loans.BookID = Books.BookID);
 
 /***********************************************************************
 	creation of stored procedures
  */
-
-/*
-CREATE STORED PROCEDURES THAT WILL QUERY FOR EACH OF THE FOLLOWING QUESTIONS:
-1.) How many copies of the book titled "The Lost Tribe" are owned by the library branch whose name 
-	is "Sharpstown"?
-2.) How many copies of the book titled "The Lost Tribe" are owned by each library branch?
-3.) Retrieve the names of all borrowers who do not have any books checked out.
-*/
-
-------------------------------------------------------------------------------------------------------------------------------------------
-
+ 
 -- 1.) How many copies of the book titled "The Lost Tribe" are owned by the library branch whose name is "Sharpstown"?
 
 
@@ -376,7 +364,6 @@ SELECT a.book_id, b.book_title, c.branch_name, a.number_of_copies
 -- Stored Procedure
 EXEC sp_Number1;
 
-------------------------------------------------------------------------------------------------------------------------------------------
 
 -- 2.) How many copies of the book titled "The Lost Tribe" are owned by each library branch?
 
@@ -391,7 +378,6 @@ SELECT a.book_id, b.book_title, c.branch_name, a.number_of_copies
 -- Stored Procedure
 EXEC sp_Number2
 
-------------------------------------------------------------------------------------------------------------------------------------------
 
 -- 3.) Retrieve the names of all borrowers who do not have any books checked out.
 
@@ -405,6 +391,4 @@ SELECT a.card_no, a.borrower_name, a.borrower_address, a.borrower_phone
 -- Stored Procedure
 EXEC sp_Number3
 
-------------------------------------------------------------------------------------------------------------------------------------------
 
-/*
