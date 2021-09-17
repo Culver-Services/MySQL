@@ -345,6 +345,10 @@ INSERT INTO tbl_book_loans
 
 SELECT * FROM tbl_book_loans;
 
+SELECT borrower_name
+FROM tbl_borrower
+WHERE card_no not in (SELECT card_no FROM tbl_book_loans)
+
 
 /***********************************************************************
 	creation of stored procedures
