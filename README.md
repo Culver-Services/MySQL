@@ -55,4 +55,3 @@ B. How many copies of the book titled "The Lost Tribe" are owned by each library
 
 C. Retrieve the names of all borrowers who do not have any books checked out.
 
-Submit all code for this exercise below:
